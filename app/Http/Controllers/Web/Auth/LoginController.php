@@ -32,4 +32,14 @@ class LoginController
     {
         return view('auth.login');
     }
+
+    /**
+     * Realiza a vlidação
+     * dos dados de login
+     * para criar a sessão 
+    */
+    public function onLogin ()
+    {
+        dd($this->request->all());
+    }
 }

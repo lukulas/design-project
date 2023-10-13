@@ -26,6 +26,9 @@ Route::domain(Util::removeHttp(env('APP_URL')))->group(function () {
     Route::get('/login', [LoginController::class, 'login'])
         ->name('login');
 
+    Route::post('/login', [LoginController::class, 'onLogin'])
+        ->name('login.verify');
+
     Route::group(["middleware" => "auth"], function (){
         Route::get('/home', [DashBoardController::class, 'home'])
             ->name('home');
